@@ -32,10 +32,10 @@ function loadModel(modelName) {
         case 'convMovI':
             currentModel = new THREE.Group(); // Placeholder
             break;
-        case 'ConvMovII':
+        case 'convMovII':
             currentModel = new THREE.Group(); // Placeholder
             break;
-        case 'Ceres':
+        case 'ceres':
             currentModel = new THREE.Group(); // Placeholder
             break;
     }
