@@ -283,6 +283,34 @@ function createConvMovII() {
     cylinder19FaceTiny.position.set(1.05, 0.2, -0.22);
     cylinder19FaceTiny.rotation.x = Math.PI / 2;
 
+    // Nova roda simples com uma única cor (tom de madeira)
+    const cylinder20Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.78, 32);
+    const cylinder20Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+    const cylinder20 = new THREE.Mesh(cylinder20Geometry, cylinder20Material);
+    cylinder20.position.set(0.75, 0.3, 0.1);
+    cylinder20.rotation.x = Math.PI / 2;
+    // Nova roda simples com uma única cor (tom de madeira)
+    const cylinder21Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.58, 32);
+    const cylinder21Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+    const cylinder21 = new THREE.Mesh(cylinder21Geometry, cylinder20Material);
+    cylinder21.position.set(-0.7, 0.3, 0.105);
+    cylinder21.rotation.x = Math.PI / 2;
+    const cylinder22Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.9, 32);
+    const cylinder22Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+    const cylinder22 = new THREE.Mesh(cylinder22Geometry, cylinder22Material);
+    cylinder22.position.set(1.05, 0.2, -0.5);
+    cylinder22.rotation.x = Math.PI / 2;
+    const cylinder23Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.58, 32);
+    const cylinder23Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+    const cylinder23 = new THREE.Mesh(cylinder23Geometry, cylinder23Material);
+    cylinder23.position.set(1.1, 0.3, 0.5);
+    cylinder23.rotation.x = Math.PI / 2;
+    const cylinder24Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.43, 32);
+    const cylinder24Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+    const cylinder24 = new THREE.Mesh(cylinder24Geometry, cylinder24Material);
+    cylinder24.position.set(0.75, 0.8, 0.58);
+    cylinder24.rotation.x = Math.PI / 2;
+
     // Adicionar os cilindros ao grupo
     group.add(cylinder, cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6, 
              cylinder7Lateral, cylinder7Face, cylinder8Lateral, cylinder8Face, cylinder9Lateral, cylinder9Face,
@@ -296,7 +324,8 @@ function createConvMovII() {
              cylinder14LateralTiny, cylinder14FaceTiny, cylinder15LateralTiny, cylinder15FaceTiny,
              cylinder16LateralTiny, cylinder16FaceTiny,
              cylinder17LateralTiny, cylinder17FaceTiny, cylinder18LateralTiny, cylinder18FaceTiny,
-             cylinder19LateralTiny, cylinder19FaceTiny);
+             cylinder19LateralTiny, cylinder19FaceTiny,
+             cylinder20, cylinder21, cylinder22, cylinder23, cylinder24);
 
     return group;
 }
