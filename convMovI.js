@@ -1,4 +1,4 @@
-function createConvMovI() {
+function createConvMovII() {
     const group = new THREE.Group();
     
     // Definir cores
