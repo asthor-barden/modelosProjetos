@@ -61,10 +61,36 @@ function createConvMovII() {
   const cube7 = new THREE.Mesh(cube7Geometry, cube6Material);    
   cube7.position.set(0.97, 0.5, 0.62); 
   cube6.rotation.z = 10.05;
-  cube7.rotation.z = 10.05;    
+  cube7.rotation.z = 10.05;  
+  
+  const cube8Geometry = new THREE.BoxGeometry(0.20, 0.6, 0.101);        
+  const cube8Material = new THREE.MeshBasicMaterial({ color:  0x3F250E });  
+  const cube8 = new THREE.Mesh(cube8Geometry, cubeMaterial);    
+  cube8.position.set(0.75, 1.1, 0.52); 
+   // Corpo Original
+   const cube9Geometry = new THREE.BoxGeometry(0.21, 0.601, 0.095);        
+   const cube9 = new THREE.Mesh(cube9Geometry, cube8Material);    
+   cube9.position.set(0.75, 1.1, 0.52); 
+
+  // Criar a geometria do cubo
+const cube10Geometry = new THREE.BoxGeometry(1, 0.5, 1);
+
+// Carregar a textura
+const textureLoader = new THREE.TextureLoader();
+const cubeTexture = textureLoader.load('tx-md1.png'); // Substitua pelo caminho da sua imagem de textura
+
+// Criar o material com a textura
+const cube10Material = new THREE.MeshStandardMaterial({
+    map: cubeTexture, // Aplica a textura ao material
+    color: 0x7A4A1E   // Mantém a cor base, que pode tingir a textura
+});
+
+// Criar o mesh com geometria e material
+const cube10 = new THREE.Mesh(cube10Geometry, cube10Material);
+cube10.position.set(0.75, 2.75, 0.52);
 
     // Adicionar cubos ao grupo (original e duplicado)
-    group.add(cube, cube1, cube2, cube3, cube4, cube5, cube6,cube7, cubeDup, cube1Dup, cube2Dup, cube3Dup);
+    group.add(cube, cube1, cube2, cube3, cube4, cube5, cube6,cube7, cube8, cube9, cube10, cubeDup, cube1Dup, cube2Dup, cube3Dup);
 
     // Cilindros Originais
     const cylinderGeometry = new THREE.CylinderGeometry(0.4, 0.4, 0.1, 32);    
@@ -323,6 +349,13 @@ function createConvMovII() {
     cylinder24.position.set(0.75, 0.8, 0.58);
     cylinder24.rotation.x = Math.PI / 2;
 
+    //Palito vertical
+    const cylinder25Geometry = new THREE.CylinderGeometry(0.07, 0.07, 2.3, 32);
+    const cylinder25Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+    const cylinder25 = new THREE.Mesh(cylinder25Geometry, cylinder25Material);
+    cylinder25.position.set(0.75, 2.1, 0.52);
+    cylinder25.rotation.x = Math.PI / 1;
+
     // Adicionar os cilindros ao grupo
     group.add(cylinder, cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6, 
              cylinder7Lateral, cylinder7Face, cylinder8Lateral, cylinder8Face, cylinder9Lateral, cylinder9Face,
@@ -337,7 +370,7 @@ function createConvMovII() {
              cylinder16LateralTiny, cylinder16FaceTiny,
              cylinder17LateralTiny, cylinder17FaceTiny, cylinder18LateralTiny, cylinder18FaceTiny,
              cylinder19LateralTiny, cylinder19FaceTiny,
-             cylinder20, cylinder21, cylinder22, cylinder23, cylinder24);
+             cylinder20, cylinder21, cylinder22, cylinder23, cylinder24, cylinder25);
 
     return group;
 }
