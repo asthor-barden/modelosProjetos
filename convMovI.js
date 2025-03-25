@@ -61,7 +61,7 @@ function createConvMovI() {
     cylinder3.position.set(0.75, 0.3, 0);
     cylinder3.rotation.x = Math.PI / 2;
     const cylinder4 = new THREE.Mesh(cylinder1Geometry, cylinder1Material);
-    cylinder4.position.set(-0.5, 0.3, 0);
+    cylinder4.position.set(-0.7, 0.3, 0);
     cylinder4.rotation.x = Math.PI / 2;
 
     const cylinder2Geometry = new THREE.CylinderGeometry(0.04, 0.04, 0.101, 32);
@@ -116,29 +116,29 @@ function createConvMovI() {
     // Roda1 duplicada
     const cylinder3GeometrySmall = new THREE.CylinderGeometry(0.25, 0.25, 0.09, 32); // Metade do tamanho
     const cylinder7LateralSmall = new THREE.Mesh(cylinder3GeometrySmall, cylinder3MaterialLateral);
-    cylinder7LateralSmall.position.set(-0.5, 0.3, 0.12);
+    cylinder7LateralSmall.position.set(-0.7, 0.3, 0.12);
     cylinder7LateralSmall.rotation.x = Math.PI / 2;
     const cylinder3GeometryFaceSmall = new THREE.CylinderGeometry(0.245, 0.245, 0.1, 32); // Metade do tamanho
     const cylinder7FaceSmall = new THREE.Mesh(cylinder3GeometryFaceSmall, cylinder3MaterialEscuro);
-    cylinder7FaceSmall.position.set(-0.5, 0.3, 0.12);
+    cylinder7FaceSmall.position.set(-0.7, 0.3, 0.12);
     cylinder7FaceSmall.rotation.x = Math.PI / 2;
 
     // Roda3 duplicada
     const cylinder9LateralSmall = new THREE.Mesh(cylinder3GeometrySmall, cylinder3MaterialLateral);
-    cylinder9LateralSmall.position.set(-0.5, 0.3, 0.32);
+    cylinder9LateralSmall.position.set(-0.7, 0.3, 0.32);
     cylinder9LateralSmall.rotation.x = Math.PI / 2;
     const cylinder9FaceSmall = new THREE.Mesh(cylinder3GeometryFaceSmall, cylinder3MaterialEscuro);
-    cylinder9FaceSmall.position.set(-0.5, 0.3, 0.32);
+    cylinder9FaceSmall.position.set(-0.7, 0.3, 0.32);
     cylinder9FaceSmall.rotation.x = Math.PI / 2;
 
     // Roda2 duplicada
     const cylinder4GeometrySmall = new THREE.CylinderGeometry(0.216, 0.216, 0.1, 32); // Metade do tamanho
     const cylinder8LateralSmall = new THREE.Mesh(cylinder4GeometrySmall, cylinder4MaterialLateral);
-    cylinder8LateralSmall.position.set(-0.5, 0.3, 0.22);
+    cylinder8LateralSmall.position.set(-0.7, 0.3, 0.22);
     cylinder8LateralSmall.rotation.x = Math.PI / 2;
     const cylinder4GeometryFaceSmall = new THREE.CylinderGeometry(0.215, 0.215, 0.09, 32); // Metade do tamanho
     const cylinder8FaceSmall = new THREE.Mesh(cylinder4GeometryFaceSmall, cylinder4MaterialEscuro);
-    cylinder8FaceSmall.position.set(-0.5, 0.3, 0.22);
+    cylinder8FaceSmall.position.set(-0.7, 0.3, 0.22);
     cylinder8FaceSmall.rotation.x = Math.PI / 2;
 
     // Adicionar os cilindros ao grupo
