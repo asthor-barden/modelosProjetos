@@ -22,13 +22,13 @@ function createConvMovII() {
     const cube3Material = new THREE.MeshBasicMaterial({ color: mdfColor });
     const cube3 = new THREE.Mesh(cube3Geometry, cube3Material);
     cube3.position.set(0.75, 1.5, 0);
-        //Base horizontal
+    // Base horizontal
     const cube4Geometry = new THREE.BoxGeometry(3, 0.1, 2);   
-    const cube4Material = new THREE.MeshBasicMaterial({ color: 0x7A4A1E  }); 
+    const cube4Material = new THREE.MeshBasicMaterial({ color: 0x7A4A1E }); 
     const cube4 = new THREE.Mesh(cube4Geometry, cube4Material);
     cube4.position.set(0, -0.8, 0);
     const cube5Geometry = new THREE.BoxGeometry(3.01, 0.09, 2.01);   
-    const cube5Material = new THREE.MeshBasicMaterial({ color: 0x3F250E});  
+    const cube5Material = new THREE.MeshBasicMaterial({ color: 0x3F250E });  
     const cube5 = new THREE.Mesh(cube5Geometry, cube5Material);
     cube5.position.set(0, -0.8, 0);
     
@@ -84,9 +84,7 @@ function createConvMovII() {
 
     // Furos
     const cylinder1Geometry = new THREE.CylinderGeometry(0.08, 0.08, 0.101, 32);
-    const cylinder1Material = new THREE.MeshBasicMaterial({ 
-        color: 0x000000 
-    });
+    const cylinder1Material = new THREE.MeshBasicMaterial({ color: 0x000000 });
     const cylinder3 = new THREE.Mesh(cylinder1Geometry, cylinder1Material);
     cylinder3.position.set(0.75, 0.3, 0);
     cylinder3.rotation.x = Math.PI / 2;
@@ -95,9 +93,7 @@ function createConvMovII() {
     cylinder4.rotation.x = Math.PI / 2;
 
     const cylinder2Geometry = new THREE.CylinderGeometry(0.04, 0.04, 0.101, 32);
-    const cylinder2Material = new THREE.MeshBasicMaterial({ 
-        color: 0x000000 
-    });
+    const cylinder2Material = new THREE.MeshBasicMaterial({ color: 0x000000 });
     const cylinder5 = new THREE.Mesh(cylinder2Geometry, cylinder2Material);
     cylinder5.position.set(1, 2.8, 0);
     cylinder5.rotation.x = Math.PI / 2;
@@ -142,13 +138,13 @@ function createConvMovII() {
     cylinder8Face.position.set(0.75, 0.3, 0.22);
     cylinder8Face.rotation.x = Math.PI / 2;
 
-     // Nova Roda1 adicional na posição (0.75, 0.3, -0.11)
-     const cylinder10Lateral = new THREE.Mesh(cylinder3Geometry, cylinder3MaterialLateral);
-     cylinder10Lateral.position.set(0.75, 0.3, -0.11);
-     cylinder10Lateral.rotation.x = Math.PI / 2;
-     const cylinder10Face = new THREE.Mesh(cylinder3GeometryFace, cylinder3MaterialEscuro);
-     cylinder10Face.position.set(0.75, 0.3, -0.11);
-     cylinder10Face.rotation.x = Math.PI / 2;
+    // Nova Roda1 adicional na posição (0.75, 0.3, -0.11)
+    const cylinder10Lateral = new THREE.Mesh(cylinder3Geometry, cylinder3MaterialLateral);
+    cylinder10Lateral.position.set(0.75, 0.3, -0.11);
+    cylinder10Lateral.rotation.x = Math.PI / 2;
+    const cylinder10Face = new THREE.Mesh(cylinder3GeometryFace, cylinder3MaterialEscuro);
+    cylinder10Face.position.set(0.75, 0.3, -0.11);
+    cylinder10Face.rotation.x = Math.PI / 2;
 
     // Rodas duplicadas (metade do tamanho)
     // Roda1 duplicada
@@ -179,11 +175,43 @@ function createConvMovII() {
     cylinder8FaceSmall.position.set(-0.7, 0.3, 0.22);
     cylinder8FaceSmall.rotation.x = Math.PI / 2;
 
+    // Rodas duplicadas menores (metade do diâmetro das "small")
+    // Roda1 duplicada menor
+    const cylinder3GeometryTiny = new THREE.CylinderGeometry(0.108, 0.108, 0.09, 32); // Metade do diâmetro de 0.25
+    const cylinder7LateralTiny = new THREE.Mesh(cylinder3GeometryTiny, cylinder3MaterialLateral);
+    cylinder7LateralTiny.position.set(-0.7, 0.3, 0.42);
+    cylinder7LateralTiny.rotation.x = Math.PI / 2;
+    const cylinder3GeometryFaceTiny = new THREE.CylinderGeometry(0.107, 0.107, 0.1, 32); // Metade do diâmetro de 0.245
+    const cylinder7FaceTiny = new THREE.Mesh(cylinder3GeometryFaceTiny, cube2Material);
+    cylinder7FaceTiny.position.set(-0.7, 0.3, 0.42);
+    cylinder7FaceTiny.rotation.x = Math.PI / 2;
+
+    // Roda3 duplicada menor
+    const cylinder9LateralTiny = new THREE.Mesh(cylinder3GeometryTiny, cylinder3MaterialLateral);
+    cylinder9LateralTiny.position.set(0.75, 0.3, -0.22);
+    cylinder9LateralTiny.rotation.x = Math.PI / 2;
+    const cylinder9FaceTiny = new THREE.Mesh(cylinder3GeometryFaceTiny, cube2Material);
+    cylinder9FaceTiny.position.set(0.75, 0.3, -0.22);
+    cylinder9FaceTiny.rotation.x = Math.PI / 2;
+
+    // Roda2 duplicada menor
+    const cylinder4GeometryTiny = new THREE.CylinderGeometry(0.108, 0.108, 0.09, 32); // Metade do diâmetro de 0.216
+    const cylinder8LateralTiny = new THREE.Mesh(cylinder4GeometryTiny, cylinder4MaterialLateral);
+    cylinder8LateralTiny.position.set(0.75, 0.3, 0.41);
+    cylinder8LateralTiny.rotation.x = Math.PI / 2;
+    const cylinder4GeometryFaceTiny = new THREE.CylinderGeometry(0.107, 0.107, 0.1, 32); // Metade do diâmetro de 0.215
+    const cylinder8FaceTiny = new THREE.Mesh(cylinder4GeometryFaceTiny, cube2Material);
+    cylinder8FaceTiny.position.set(0.75, 0.3, 0.41);
+    cylinder8FaceTiny.rotation.x = Math.PI / 2;
+
     // Adicionar os cilindros ao grupo
     group.add(cylinder, cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6, 
-             cylinder7Lateral, cylinder7Face, cylinder8Lateral, cylinder8Face, cylinder9Lateral, cylinder10Lateral, cylinder10Face, cylinder9Face,
+             cylinder7Lateral, cylinder7Face, cylinder8Lateral, cylinder8Face, cylinder9Lateral, cylinder9Face,
+             cylinder10Lateral, cylinder10Face,
              cylinder7LateralSmall, cylinder7FaceSmall, cylinder8LateralSmall, cylinder8FaceSmall, 
-             cylinder9LateralSmall, cylinder9FaceSmall);
+             cylinder9LateralSmall, cylinder9FaceSmall,
+             cylinder7LateralTiny, cylinder7FaceTiny, cylinder8LateralTiny, cylinder8FaceTiny,
+             cylinder9LateralTiny, cylinder9FaceTiny);
 
     return group;
 }
