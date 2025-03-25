@@ -51,8 +51,20 @@ function createConvMovII() {
     const cube3Dup = new THREE.Mesh(cube3DupGeometry, cube3DupMaterial);
     cube3Dup.position.set(0.75, 1.5, 0);
     
+
+ const cube6Geometry = new THREE.BoxGeometry(0.10, 0.6, 0.101);        
+ const cube6Material = new THREE.MeshBasicMaterial({ color:  0x3F250E });  
+ const cube6 = new THREE.Mesh(cube6Geometry, cubeMaterial);    
+ cube6.position.set(0.97, 0.5, 0.62); 
+  // Corpo Original
+  const cube7Geometry = new THREE.BoxGeometry(0.11, 0.601, 0.095);        
+  const cube7 = new THREE.Mesh(cube7Geometry, cube6Material);    
+  cube7.position.set(0.97, 0.5, 0.62); 
+  cube6.rotation.z = 10.05;
+  cube7.rotation.z = 10.05;    
+
     // Adicionar cubos ao grupo (original e duplicado)
-    group.add(cube, cube1, cube2, cube3, cube4, cube5, cubeDup, cube1Dup, cube2Dup, cube3Dup);
+    group.add(cube, cube1, cube2, cube3, cube4, cube5, cube6,cube7, cubeDup, cube1Dup, cube2Dup, cube3Dup);
 
     // Cilindros Originais
     const cylinderGeometry = new THREE.CylinderGeometry(0.4, 0.4, 0.1, 32);    
