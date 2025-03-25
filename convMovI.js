@@ -113,7 +113,7 @@ function createConvMovI() {
     // Materiais para as faces superior/inferior (marrom mais escuro)
     const cylinder3MaterialEscuro = new THREE.MeshBasicMaterial({ color: 0x7A4A1E }); // Marrom escuro Roda1 e Roda3
     const cylinder4MaterialEscuro = new THREE.MeshBasicMaterial({ color: 0x7A4A1E }); // Marrom escuro Roda2
-
+        
     // Roda1 (original)
     const cylinder3Geometry = new THREE.CylinderGeometry(0.5, 0.5, 0.1, 32);
     const cylinder7Lateral = new THREE.Mesh(cylinder3Geometry, cylinder3MaterialLateral);
@@ -123,7 +123,7 @@ function createConvMovI() {
     const cylinder7Face = new THREE.Mesh(cylinder3GeometryFace, cylinder3MaterialEscuro);
     cylinder7Face.position.set(0.75, 0.3, 0.12);
     cylinder7Face.rotation.x = Math.PI / 2;
-
+    
     // Roda3 (original)
     const cylinder9Lateral = new THREE.Mesh(cylinder3Geometry, cylinder3MaterialLateral);
     cylinder9Lateral.position.set(0.75, 0.3, 0.32);
@@ -141,6 +141,14 @@ function createConvMovI() {
     const cylinder8Face = new THREE.Mesh(cylinder4GeometryFace, cylinder4MaterialEscuro);
     cylinder8Face.position.set(0.75, 0.3, 0.22);
     cylinder8Face.rotation.x = Math.PI / 2;
+
+     // Nova Roda1 adicional na posição (0.75, 0.3, -0.11)
+     const cylinder10Lateral = new THREE.Mesh(cylinder3Geometry, cylinder3MaterialLateral);
+     cylinder10Lateral.position.set(0.75, 0.3, -0.11);
+     cylinder10Lateral.rotation.x = Math.PI / 2;
+     const cylinder10Face = new THREE.Mesh(cylinder3GeometryFace, cylinder3MaterialEscuro);
+     cylinder10Face.position.set(0.75, 0.3, -0.11);
+     cylinder10Face.rotation.x = Math.PI / 2;
 
     // Rodas duplicadas (metade do tamanho)
     // Roda1 duplicada
@@ -173,7 +181,7 @@ function createConvMovI() {
 
     // Adicionar os cilindros ao grupo
     group.add(cylinder, cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6, 
-             cylinder7Lateral, cylinder7Face, cylinder8Lateral, cylinder8Face, cylinder9Lateral, cylinder9Face,
+             cylinder7Lateral, cylinder7Face, cylinder8Lateral, cylinder8Face, cylinder9Lateral, cylinder10Lateral, cylinder10Face, cylinder9Face,
              cylinder7LateralSmall, cylinder7FaceSmall, cylinder8LateralSmall, cylinder8FaceSmall, 
              cylinder9LateralSmall, cylinder9FaceSmall);
 
