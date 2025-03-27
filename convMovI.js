@@ -148,11 +148,127 @@ function createConvMovI() {
     largeWheelFace.rotation.x = Math.PI / 2;
     largeWheelFace.rotation.z = Math.PI / 2;
 
-    // Adicionar todos os objetos ao grupo
-    group.add(base, baseDup, largeGear, largeGearDup, largeGearDup1, largeGearDup2, smallGear, smallGearDup, smallGearDup1, smallGearDup2,
-              tinyWheel1Lateral, tinyWheel1Face, tinyWheel2Lateral, tinyWheel2Face, tinyWheel3Lateral, tinyWheel3Face,
-              largeWheelLateral, largeWheelFace);
+   // Nova roda com diâmetro 0.3 (raio 0.15)
+   const smallWheelGeometry = new THREE.CylinderGeometry(0.25, 0.25, 0.09, 32); // Raio 0.15, altura 0.09
+   const smallWheelFaceGeometry = new THREE.CylinderGeometry(0.24, 0.24, 0.1, 32); // Raio ligeiramente menor para a face
+   const smallWheelMaterialLateral = new THREE.MeshBasicMaterial({ color: darkerGearColor });
+   const smallWheelMaterialFace = new THREE.MeshBasicMaterial({ color: gearColor });
 
+   const smallWheelLateral = new THREE.Mesh(smallWheelGeometry, baseDupMaterial);
+   smallWheelLateral.position.set(0.31, 1.85, 0); // Mesma posição inicial das outras
+   smallWheelLateral.rotation.x = Math.PI / 2;
+   smallWheelLateral.rotation.z = Math.PI / 2;
+   const smallWheelFace = new THREE.Mesh(smallWheelFaceGeometry, baseMaterial);
+   smallWheelFace.position.set(0.31, 1.85, 0);
+   smallWheelFace.rotation.x = Math.PI / 2;
+   smallWheelFace.rotation.z = Math.PI / 2;
+
+       //Palito vertical
+       const cylinder1Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.55, 32);
+       const cylinder1Material = new THREE.MeshBasicMaterial({ color: 0xA67B5B }); // Marrom sienna, tom de madeira
+       const cylinder2Geometry = new THREE.CylinderGeometry(0.07, 0.07, 0.33, 32);
+       const cylinder1 = new THREE.Mesh(cylinder2Geometry, cylinder1Material);
+       cylinder1.position.set(0, 1.6, 0);
+       cylinder1.rotation.x = Math.PI / 2;
+       cylinder1.rotation.z = Math.PI / 2;
+       
+       const cylinder2 = new THREE.Mesh(cylinder1Geometry, cylinder1Material);
+       cylinder2.position.set(0, 0.5, 0);
+       cylinder2.rotation.x = Math.PI / 2;
+       cylinder2.rotation.z = Math.PI / 2;
+       const cylinder3 = new THREE.Mesh(cylinder2Geometry, cylinder1Material);
+       cylinder3.position.set(0.21, 1.85, 0);
+       cylinder3.rotation.x = Math.PI / 2;
+       cylinder3.rotation.z = Math.PI / 2;
+       const cylinder4 = new THREE.Mesh(cylinder1Geometry, cylinder1Material);
+       cylinder4.position.set(-0.31, 0.6, -0.5);
+       cylinder4.rotation.x = Math.PI / 2;
+       cylinder4.rotation.z = Math.PI / 2;
+
+       // Base vertical (original)
+    const base1Geometry = new THREE.BoxGeometry(0.1, 2.8, 2.5);    
+    const base1 = new THREE.Mesh(base1Geometry, smallWheelMaterialFace);
+    base1.position.set(0, -0.45, 0);
+    base1.rotation.z = Math.PI / 2;
+    const base1DupGeometry = new THREE.BoxGeometry(0.09, 2.81, 2.51);    
+    const base1Dup = new THREE.Mesh(base1DupGeometry, smallGearDupMaterial);
+    base1Dup.position.set(0, -0.45, 0);
+    base1Dup.rotation.z = Math.PI / 2;
+   // Base horizontal (original)
+   const base2Geometry = new THREE.BoxGeometry(0.1, 0.8, 1.3);    
+   const base2 = new THREE.Mesh(base2Geometry, smallWheelMaterialFace);
+   base2.position.set(0.1, 3, 0);
+   base2.rotation.z = Math.PI / 1;
+   const base2DupGeometry = new THREE.BoxGeometry(0.09, 0.81, 1.31);    
+   const base2Dup = new THREE.Mesh(base2DupGeometry, smallGearDupMaterial);
+   base2Dup.position.set(0.1, 3, 0);
+   base2Dup.rotation.z = Math.PI / 1;
+  
+    const base3Geometry = new THREE.BoxGeometry(0.1, 0.8, 0.5);    
+    const base3 = new THREE.Mesh(base3Geometry, smallWheelMaterialFace);
+    base3.position.set(0.2, 3, 0.4);
+    base3.rotation.z = Math.PI / 1;
+    const base3DupGeometry = new THREE.BoxGeometry(0.09, 0.81, 0.51);    
+    const base3Dup = new THREE.Mesh(base3DupGeometry, smallGearDupMaterial);
+    base3Dup.position.set(0.2, 3, 0.4);
+    base3Dup.rotation.z = Math.PI / 1;      
+    const base4 = new THREE.Mesh(base3Geometry, smallWheelMaterialFace);
+    base4.position.set(0.2, 3, -0.4);
+    base4.rotation.z = Math.PI / 1;       
+    const base4Dup = new THREE.Mesh(base3DupGeometry, smallGearDupMaterial);
+    base4Dup.position.set(0.2, 3, -0.4);
+    base4Dup.rotation.z = Math.PI / 1;
+
+    // Base vertical (original)
+    const base5Geometry = new THREE.BoxGeometry(0.1, 1.9, 0.25);    
+    const base5 = new THREE.Mesh(base5Geometry, smallWheelMaterialFace);
+    base5.position.set(0.205, 3, 0);
+    base5.rotation.z = Math.PI / 1;
+    const base5DupGeometry = new THREE.BoxGeometry(0.09, 1.91, 0.26);    
+    const base5Dup = new THREE.Mesh(base5DupGeometry, smallGearDupMaterial);
+    base5Dup.position.set(0.205, 3, 0);
+    base5Dup.rotation.z = Math.PI / 1;
+
+       
+       const base6Geometry = new THREE.BoxGeometry(0.1, 0.1, 0.85);    
+       const base6 = new THREE.Mesh(base6Geometry, smallWheelMaterialFace);
+       base6.position.set(0.205, 1.71, 0);
+       base6.rotation.z = Math.PI / 1;
+       const base6DupGeometry = new THREE.BoxGeometry(0.09, 0.11, 0.86);    
+       const base6Dup = new THREE.Mesh(base6DupGeometry, smallGearDupMaterial);
+       base6Dup.position.set(0.205, 1.71, 0);
+       base6Dup.rotation.z = Math.PI / 1;
+       const base7 = new THREE.Mesh(base6Geometry, smallWheelMaterialFace);
+       base7.position.set(0.205, 1.99, 0);
+       base7.rotation.z = Math.PI / 1;          
+       const base7Dup = new THREE.Mesh(base6DupGeometry, smallGearDupMaterial);
+       base7Dup.position.set(0.205, 1.99, 0);
+       base7Dup.rotation.z = Math.PI / 1;
+
+
+    const base8Geometry = new THREE.BoxGeometry(0.1, 0.2, 0.1);    
+    const base8 = new THREE.Mesh(base8Geometry, smallWheelMaterialFace);
+    base8.position.set(0.205, 1.85, 0.375);
+    base8.rotation.z = Math.PI / 1;
+    const base8DupGeometry = new THREE.BoxGeometry(0.09, 0.21, 0.11);    
+    const base8Dup = new THREE.Mesh(base8DupGeometry, smallGearDupMaterial);
+    base8Dup.position.set(0.205, 1.85, 0.375);
+    base8Dup.rotation.z = Math.PI / 1;
+     
+    const base9 = new THREE.Mesh(base8Geometry, smallWheelMaterialFace);
+    base9.position.set(0.205, 1.85, -0.375);
+    base9.rotation.z = Math.PI / 1;
+       
+    const base9Dup = new THREE.Mesh(base8DupGeometry, smallGearDupMaterial);
+    base9Dup.position.set(0.205, 1.85, -0.375);
+    base9Dup.rotation.z = Math.PI / 1;
+
+
+   // Adicionar todos os objetos ao grupo
+   group.add(base, base1, base2, base3, base4, base5, base6, base7, base8, base9 , baseDup, base1Dup, base2Dup, base3Dup, base4Dup, base5Dup, base6Dup, base7Dup, base8Dup, base9Dup, largeGear, largeGearDup, largeGearDup1, largeGearDup2, smallGear, smallGearDup, smallGearDup1, smallGearDup2,
+             tinyWheel1Lateral, tinyWheel1Face, tinyWheel2Lateral, tinyWheel2Face, tinyWheel3Lateral, tinyWheel3Face,
+             largeWheelLateral, largeWheelFace, smallWheelLateral, smallWheelFace, cylinder1, cylinder2, cylinder3, cylinder4);
+   
     // Girar todo o grupo -90 graus no eixo Y
     group.rotation.y = -Math.PI / 2;
 
