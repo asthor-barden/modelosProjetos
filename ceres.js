@@ -11,13 +11,13 @@ function createCeres() {
     motor.position.set(0, 2, 0); // Centro do motor na base, elevado para ficar em pé   
 
     // Caixa de redução (cubo amarelo, acoplado no topo do motor)
-    const gearboxGeometry = new THREE.BoxGeometry(1.1, 1.7, 1.2); // Mesmas dimensões do "Press Switch"
+    const gearboxGeometry = new THREE.BoxGeometry(1.1, 2, 1.2); // Mesmas dimensões do "Press Switch"
     const gearboxMaterial = new THREE.MeshPhongMaterial({ 
         color: 0xFFFF00, // Amarelo
         shininess: 30 
     });
     const gearbox = new THREE.Mesh(gearboxGeometry, gearboxMaterial);
-    gearbox.position.set(0, 1.2, 0); // No topo do motor (1.5/2 + 0.7/2 + ajuste)
+    gearbox.position.set(0, 1, 0); // No topo do motor (1.5/2 + 0.7/2 + ajuste)
 
      // Corpo prastico do motor DC (cilíndrico, cor amarela como a caixa de redução)
      const motor1Geometry = new THREE.CylinderGeometry(0.55, 0.55, 0.5, 32); 
@@ -41,7 +41,7 @@ const motor3Geometry = new THREE.CylinderGeometry(0.3, 0.35, 0.1, 32);
 
     const motor5Geometry = new THREE.CylinderGeometry(0.1, 0.1, 1.35, 32); 
         const motor5 = new THREE.Mesh(motor5Geometry, gearboxMaterial);
-        motor5.position.set(0, 1.5, 0);
+        motor5.position.set(0, 1.1, 0);
         motor5.rotation.z = Math.PI / 2;
 
     // Eixo duplo (saindo apenas da caixa de redução)
@@ -54,12 +54,12 @@ const motor3Geometry = new THREE.CylinderGeometry(0.3, 0.35, 0.1, 32);
     // Eixo esquerdo (saindo da caixa de redução)
     const leftShaft = new THREE.Mesh(shaftGeometry, shaftMaterial);
     leftShaft.rotation.z = Math.PI / 2; // Horizontal
-    leftShaft.position.set(-0.7, 0.8, 0); // Alinhado ao centro da caixa de redução
+    leftShaft.position.set(-0.7, 0.5, 0); // Alinhado ao centro da caixa de redução
 
     // Eixo direito (saindo da caixa de redução)
     const rightShaft = new THREE.Mesh(shaftGeometry, shaftMaterial);
     rightShaft.rotation.z = Math.PI / 2; // Horizontal
-    rightShaft.position.set(0.7, 0.8, 0); // Alinhado ao centro da caixa de redução
+    rightShaft.position.set(0.7, 0.5, 0); // Alinhado ao centro da caixa de redução
     
     // Conectores do motor (terminais elétricos, na base do motor)
     const terminalGeometry = new THREE.BoxGeometry(0.1, 0.2, 0.05);
@@ -76,6 +76,8 @@ const motor3Geometry = new THREE.CylinderGeometry(0.3, 0.35, 0.1, 32);
 
     // Adicionar todos os objetos ao grupo em uma única chamada
     group.add(motor, motor1, motor2, motor3, motor4, motor5, gearbox, leftShaft, rightShaft,  terminal1, terminal2);
+
+    group.position.y = -0.7;
 
     return group;
 }
