@@ -21,8 +21,8 @@ function createCeres() {
 
      // Corpo prastico do motor DC (cilíndrico, cor amarela como a caixa de redução)
      const motor1Geometry = new THREE.CylinderGeometry(0.55, 0.55, 0.5, 32); 
-     const motor1 = new THREE.Mesh(motor1Geometry, gearboxMaterial);
-  motor1.position.set(0, 2.11, 0); 
+        const motor1 = new THREE.Mesh(motor1Geometry, gearboxMaterial);
+        motor1.position.set(0, 2.11, 0); 
 
   // Parte preta do motor DC
   const motor2Geometry = new THREE.CylinderGeometry(0.48, 0.5, 0.1, 32); 
@@ -38,6 +38,11 @@ const motor3Geometry = new THREE.CylinderGeometry(0.3, 0.35, 0.1, 32);
     const motor4Geometry = new THREE.CylinderGeometry(0.04, 0.04, 0.1, 32);
     const motor4 = new THREE.Mesh(motor4Geometry, motorMaterial);
     motor4.position.set(0, 2.91, 0);
+
+    const motor5Geometry = new THREE.CylinderGeometry(0.1, 0.1, 1.35, 32); 
+        const motor5 = new THREE.Mesh(motor5Geometry, gearboxMaterial);
+        motor5.position.set(0, 1.5, 0);
+        motor5.rotation.z = Math.PI / 2;
 
     // Eixo duplo (saindo apenas da caixa de redução)
     const shaftGeometry = new THREE.CylinderGeometry(0.08, 0.08, 0.5, 32); // Raio fino, comprimento 1.5
@@ -70,7 +75,7 @@ const motor3Geometry = new THREE.CylinderGeometry(0.3, 0.35, 0.1, 32);
     terminal2.position.set(0.4, 2.875, 0.25); // Terminal superior na base do motor
 
     // Adicionar todos os objetos ao grupo em uma única chamada
-    group.add(motor, motor1, motor2, motor3, motor4, gearbox, leftShaft, rightShaft,  terminal1, terminal2);
+    group.add(motor, motor1, motor2, motor3, motor4, motor5, gearbox, leftShaft, rightShaft,  terminal1, terminal2);
 
     return group;
 }
