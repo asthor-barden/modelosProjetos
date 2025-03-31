@@ -328,56 +328,106 @@ function createCeres() {
         const cube28Material = new THREE.MeshBasicMaterial({ color: 0x7A4A1E });
         const cube29Material = new THREE.MeshBasicMaterial({ color: 0x3F250E });
         const cube28 = new THREE.Mesh(cube28Geometry, cube28Material);
-        cube28.position.set(0, 3.5, 0.95);
+        cube28.position.set(0, 3.4, 0.95);
         cube28.rotation.y = Math.PI / 1;
         cube28.rotation.z = Math.PI / 1;
         cube28.rotation.x = Math.PI / 2;
         const cube29 = new THREE.Mesh(cube29Geometry, cube29Material);
-        cube29.position.set(0, 3.5, 0.95);
+        cube29.position.set(0, 3.4, 0.95);
         cube29.rotation.y = Math.PI / 1;
         cube29.rotation.z = Math.PI / 1;
         cube29.rotation.x = Math.PI / 2;
         const cube30 = new THREE.Mesh(cube28Geometry, cube28Material);
-        cube30.position.set(0, 2.9, 0.95);
+        cube30.position.set(0, 2.8, 0.95);
         cube30.rotation.y = Math.PI / 1;
         cube30.rotation.z = Math.PI / 1;
         cube30.rotation.x = Math.PI / 2;
         const cube31 = new THREE.Mesh(cube29Geometry, cube29Material);
-        cube31.position.set(0, 2.9, 0.95);
+        cube31.position.set(0, 2.8, 0.95);
         cube31.rotation.y = Math.PI / 1;
         cube31.rotation.z = Math.PI / 1;
         cube31.rotation.x = Math.PI / 2;
         const cube32Geometry = new THREE.BoxGeometry(1.4, 0.5, 0.11);  
         const cube33Geometry = new THREE.BoxGeometry(1.41, 0.51, 0.1);  
         const cube32 = new THREE.Mesh(cube32Geometry, cube28Material);
-        cube32.position.set(0, 2.9, 0.8);
+        cube32.position.set(0, 2.8, 0.8);
         cube32.rotation.y = Math.PI / 1;
         cube32.rotation.z = Math.PI / 1;
         cube32.rotation.x = Math.PI / 2;
         const cube34 = new THREE.Mesh(cube33Geometry, cube29Material);
-        cube34.position.set(0, 2.9, 0.8);
+        cube34.position.set(0, 2.8, 0.8);
         cube34.rotation.y = Math.PI / 1;
         cube34.rotation.z = Math.PI / 1;
         cube34.rotation.x = Math.PI / 2;
         const cube33 = new THREE.Mesh(cube32Geometry, cube28Material);
-        cube33.position.set(0, 3.5, 0.8);
+        cube33.position.set(0, 3.4, 0.8);
         cube33.rotation.y = Math.PI / 1;
         cube33.rotation.z = Math.PI / 1;
         cube33.rotation.x = Math.PI / 2;
         const cube35 = new THREE.Mesh(cube33Geometry, cube29Material);
-        cube35.position.set(0, 3.5, 0.8);
+        cube35.position.set(0, 3.4, 0.8);
         cube35.rotation.y = Math.PI / 1;
         cube35.rotation.z = Math.PI / 1;
-        cube35.rotation.x = Math.PI / 2;
+        cube35.rotation.x = Math.PI / 2;  
+        const cube36 = new THREE.Mesh(cube32Geometry, cube28Material);
+        cube36.position.set(0, -0.5, 0.8);
+        cube36.rotation.y = Math.PI / 1;
+        cube36.rotation.z = Math.PI / 1;
+        cube36.rotation.x = Math.PI / 2;
+        const cube37 = new THREE.Mesh(cube33Geometry, cube29Material);
+        cube37.position.set(0, -0.5, 0.8);
+        cube37.rotation.y = Math.PI / 1;
+        cube37.rotation.z = Math.PI / 1;
+        cube37.rotation.x = Math.PI / 2;   
         
+    //Cria parte de baixo
+        const cube38Geometry = new THREE.BoxGeometry(1.1, 4.8, 0.11);  
+        const cube39Geometry = new THREE.BoxGeometry(1.11, 4.81, 0.1);  
+        const cube38 = new THREE.Mesh(cube38Geometry, cube28Material);
+        cube38.position.set(0, -0.5, 3);
+        cube38.rotation.y = Math.PI / 1;
+        cube38.rotation.z = Math.PI / 1;
+        cube38.rotation.x = Math.PI /2;
+        const cube39 = new THREE.Mesh(cube39Geometry, cube29Material);
+        cube39.position.set(0, -0.5, 3);
+        cube39.rotation.y = Math.PI / 1;
+        cube39.rotation.z = Math.PI / 1;
+        cube39.rotation.x = Math.PI /2;
+
+//Cria rodas grandes
+const cylinderMaterialEscuro = new THREE.MeshBasicMaterial({ color: 0x3F250E }); // Marrom escuro Roda2
+const cylinderMaterialClaro = new THREE.MeshBasicMaterial({ color: 0x7A4A1E }); // Marrom escuro Roda2
+        
+// Roda1 (original)
+const cylinderGeometry = new THREE.CylinderGeometry(2.2, 2.2, 0.11, 32);
+const cylinder1Geometry = new THREE.CylinderGeometry(2.21, 2.21, 0.1, 32);
+const cylinder = new THREE.Mesh(cylinderGeometry, cylinderMaterialClaro);
+    cylinder.position.set(0.8, 0.2, 0);
+    cylinder.rotation.x = Math.PI / 2;
+    cylinder.rotation.z = Math.PI / 2;
+    const cylinder1 = new THREE.Mesh(cylinder1Geometry, cylinderMaterialEscuro);
+    cylinder1.position.set(0.8, 0.2, 0);
+    cylinder1.rotation.x = Math.PI / 2;
+    cylinder1.rotation.z = Math.PI / 2;
+const cylinder2 = new THREE.Mesh(cylinderGeometry, cylinderMaterialClaro);
+    cylinder2.position.set(-0.8, 0.2, 0);
+    cylinder2.rotation.x = Math.PI / 2;
+    cylinder2.rotation.z = Math.PI / 2;
+    const cylinder3 = new THREE.Mesh(cylinder1Geometry, cylinderMaterialEscuro);
+    cylinder3.position.set(-0.8, 0.2, 0);
+    cylinder3.rotation.x = Math.PI / 2;
+    cylinder3.rotation.z = Math.PI / 2;
+   
+   
+   
 
 
     // --- Adiciona todos os componentes ao grupo ---
     group.add(motor, motor1, motor2, motor3, motor4, motor5, gearbox, leftShaft, rightShaft, 
-              terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3, quarterCylinder4, quarterCylinder5,quarterCylinder6, quarterCylinder7, cube4, cube5, cube6, cube7, cube8, cube9, cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25, cube26, cube27, cube28, cube29, cube30, cube31, cube32, cube33, cube34, cube35);
+              terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3, quarterCylinder4, quarterCylinder5,quarterCylinder6, quarterCylinder7, cube4, cube5, cube6, cube7, cube8, cube9, cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25, cube26, cube27, cube28, cube29, cube30, cube31, cube32, cube33, cube34, cube35, cube36, cube37, cube38,cube39, cylinder, cylinder1, cylinder2, cylinder3);
 
     // Ajuste final da posição do grupo no espaço
-    group.position.y = -0.7;
+    group.position.y = -0.2;
     group.position.z = -1;
     group.rotation.y = -1;
 
