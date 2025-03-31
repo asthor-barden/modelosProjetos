@@ -282,9 +282,99 @@ function createCeres() {
         cube19.rotation.y = Math.PI / 2;
         cube19.rotation.z = Math.PI / 2;
 
+    //Cria encaixes da parte superior
+    const cube20Geometry = new THREE.BoxGeometry(1.7, 0.6, 0.11);   
+        const cube20 = new THREE.Mesh(cube20Geometry, cubeMaterial);
+        cube20.position.set(0.6, 2.8, 0.85);
+        cube20.rotation.y = Math.PI / 2;
+        cube20.rotation.z = Math.PI / 2;
+        const cube22 = new THREE.Mesh(cube20Geometry, cubeMaterial);
+        cube22.position.set(-0.6, 2.8, 0.85);
+        cube22.rotation.y = Math.PI / 2;
+        cube22.rotation.z = Math.PI / 2;
+    const cube21Geometry = new THREE.BoxGeometry(1.71, 0.61, 0.1);   
+        const cube21 = new THREE.Mesh(cube21Geometry, cube1Material);
+        cube21.position.set(0.6, 2.8, 0.85);
+        cube21.rotation.y = Math.PI / 2;
+        cube21.rotation.z = Math.PI / 2;
+        const cube23 = new THREE.Mesh(cube21Geometry, cube1Material);
+        cube23.position.set(-0.6, 2.8, 0.85);
+        cube23.rotation.y = Math.PI / 2;
+        cube23.rotation.z = Math.PI / 2;
+//Cria meio das bases laterais  
+        const cube24Geometry = new THREE.BoxGeometry(1.8, 0.5, 0.11);   
+        const cube24 = new THREE.Mesh(cube24Geometry, cubeMaterial);
+        cube24.position.set(0.6, 1.1, 0.7);
+        cube24.rotation.y = Math.PI / 2;
+        cube24.rotation.z = Math.PI / 2;
+        const cube26 = new THREE.Mesh(cube24Geometry, cubeMaterial);
+        cube26.position.set(-0.6, 1.1, 0.7);
+        cube26.rotation.y = Math.PI / 2;
+        cube26.rotation.z = Math.PI / 2;
+
+        const cube25Geometry = new THREE.BoxGeometry(1.81, 0.51, 0.1);   
+        const cube25 = new THREE.Mesh(cube25Geometry, cube1Material);
+        cube25.position.set(0.6, 1.1, 0.7);
+        cube25.rotation.y = Math.PI / 2;
+        cube25.rotation.z = Math.PI / 2;
+        const cube27 = new THREE.Mesh(cube25Geometry, cube1Material);
+        cube27.position.set(-0.6, 1.1, 0.7);
+        cube27.rotation.y = Math.PI / 2;
+        cube27.rotation.z = Math.PI / 2;
+
+//Cria suporte do botão
+        const cube28Geometry = new THREE.BoxGeometry(1.1, 0.8, 0.11);  
+        const cube29Geometry = new THREE.BoxGeometry(1.11, 0.81, 0.1);  
+        const cube28Material = new THREE.MeshBasicMaterial({ color: 0x7A4A1E });
+        const cube29Material = new THREE.MeshBasicMaterial({ color: 0x3F250E });
+        const cube28 = new THREE.Mesh(cube28Geometry, cube28Material);
+        cube28.position.set(0, 3.5, 0.95);
+        cube28.rotation.y = Math.PI / 1;
+        cube28.rotation.z = Math.PI / 1;
+        cube28.rotation.x = Math.PI / 2;
+        const cube29 = new THREE.Mesh(cube29Geometry, cube29Material);
+        cube29.position.set(0, 3.5, 0.95);
+        cube29.rotation.y = Math.PI / 1;
+        cube29.rotation.z = Math.PI / 1;
+        cube29.rotation.x = Math.PI / 2;
+        const cube30 = new THREE.Mesh(cube28Geometry, cube28Material);
+        cube30.position.set(0, 2.9, 0.95);
+        cube30.rotation.y = Math.PI / 1;
+        cube30.rotation.z = Math.PI / 1;
+        cube30.rotation.x = Math.PI / 2;
+        const cube31 = new THREE.Mesh(cube29Geometry, cube29Material);
+        cube31.position.set(0, 2.9, 0.95);
+        cube31.rotation.y = Math.PI / 1;
+        cube31.rotation.z = Math.PI / 1;
+        cube31.rotation.x = Math.PI / 2;
+        const cube32Geometry = new THREE.BoxGeometry(1.4, 0.5, 0.11);  
+        const cube33Geometry = new THREE.BoxGeometry(1.41, 0.51, 0.1);  
+        const cube32 = new THREE.Mesh(cube32Geometry, cube28Material);
+        cube32.position.set(0, 2.9, 0.8);
+        cube32.rotation.y = Math.PI / 1;
+        cube32.rotation.z = Math.PI / 1;
+        cube32.rotation.x = Math.PI / 2;
+        const cube34 = new THREE.Mesh(cube33Geometry, cube29Material);
+        cube34.position.set(0, 2.9, 0.8);
+        cube34.rotation.y = Math.PI / 1;
+        cube34.rotation.z = Math.PI / 1;
+        cube34.rotation.x = Math.PI / 2;
+        const cube33 = new THREE.Mesh(cube32Geometry, cube28Material);
+        cube33.position.set(0, 3.5, 0.8);
+        cube33.rotation.y = Math.PI / 1;
+        cube33.rotation.z = Math.PI / 1;
+        cube33.rotation.x = Math.PI / 2;
+        const cube35 = new THREE.Mesh(cube33Geometry, cube29Material);
+        cube35.position.set(0, 3.5, 0.8);
+        cube35.rotation.y = Math.PI / 1;
+        cube35.rotation.z = Math.PI / 1;
+        cube35.rotation.x = Math.PI / 2;
+        
+
+
     // --- Adiciona todos os componentes ao grupo ---
     group.add(motor, motor1, motor2, motor3, motor4, motor5, gearbox, leftShaft, rightShaft, 
-              terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3, quarterCylinder4, quarterCylinder5,quarterCylinder6, quarterCylinder7, cube4, cube5, cube6, cube7, cube8, cube9, cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19);
+              terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3, quarterCylinder4, quarterCylinder5,quarterCylinder6, quarterCylinder7, cube4, cube5, cube6, cube7, cube8, cube9, cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25, cube26, cube27, cube28, cube29, cube30, cube31, cube32, cube33, cube34, cube35);
 
     // Ajuste final da posição do grupo no espaço
     group.position.y = -0.7;
