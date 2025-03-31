@@ -110,8 +110,8 @@ function createCeres() {
 
     // --- Quarto de cilindro para arredondar bordas ---
     const quarterCylinderGeometry = new THREE.CylinderGeometry(
-        0.8, // Raio externo
-        0.8, // Raio externo (mantido igual para um cilindro sólido)
+        0.7, // Raio externo
+        0.7, // Raio externo (mantido igual para um cilindro sólido)
         0.11, // Espessura como altura do cilindro
         32, // Segmentos radiais
         1, // Segmentos de altura
@@ -120,8 +120,8 @@ function createCeres() {
         Math.PI / 2 // Ângulo de 90 graus (1/4 do cilindro)
     );
     const quarterCylinder1Geometry = new THREE.CylinderGeometry(
-        0.81, // Raio externo
-        0.81, // Raio externo (mantido igual para um cilindro sólido)
+        0.71, // Raio externo
+        0.71, // Raio externo (mantido igual para um cilindro sólido)
         0.1, // Espessura como altura do cilindro
         32, // Segmentos radiais
         1, // Segmentos de altura
@@ -133,7 +133,7 @@ function createCeres() {
     const quarterCylinder = new THREE.Mesh(quarterCylinderGeometry, cubeMaterial);
     
     // Posicionamento inicial (ajuste conforme necessário)
-    quarterCylinder.position.set(0.6, 1.8, -0.4); // Centralizado no grupo, ajuste para a junção desejada
+    quarterCylinder.position.set(0.6, 1.8, -0.6); // Centralizado no grupo, ajuste para a junção desejada
     quarterCylinder.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
     quarterCylinder.rotation.z = Math.PI / -2;
     quarterCylinder.rotation.y = Math.PI / 1;
@@ -141,30 +141,150 @@ function createCeres() {
     const quarterCylinder1 = new THREE.Mesh(quarterCylinder1Geometry, cube1Material);
     
     // Posicionamento inicial (ajuste conforme necessário)
-    quarterCylinder1.position.set(0.6, 1.8, -0.4); // Centralizado no grupo, ajuste para a junção desejada
+    quarterCylinder1.position.set(0.6, 1.8, -0.6); // Centralizado no grupo, ajuste para a junção desejada
     quarterCylinder1.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
     quarterCylinder1.rotation.z = Math.PI / -2;
     quarterCylinder1.rotation.y = Math.PI / 1;
 
     const quarterCylinder2 = new THREE.Mesh(quarterCylinderGeometry, cubeMaterial);
     
-    // Posicionamento inicial (ajuste conforme necessário)
-    quarterCylinder2.position.set(-0.6, 1.8, -0.4); // Centralizado no grupo, ajuste para a junção desejada
+    // Posicionamento inicial 
+    quarterCylinder2.position.set(-0.6, 1.8, -0.6); // Centralizado no grupo, ajuste para a junção desejada
     quarterCylinder2.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
     quarterCylinder2.rotation.z = Math.PI / -2;
     quarterCylinder2.rotation.y = Math.PI / 1;
 
     const quarterCylinder3 = new THREE.Mesh(quarterCylinder1Geometry, cube1Material);
     
-    // Posicionamento inicial (ajuste conforme necessário)
-    quarterCylinder3.position.set(-0.6, 1.8, -0.4); // Centralizado no grupo, ajuste para a junção desejada
+    // Posicionamento inicial 
+    quarterCylinder3.position.set(-0.6, 1.8, -0.6); // Centralizado no grupo, ajuste para a junção desejada
     quarterCylinder3.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
     quarterCylinder3.rotation.z = Math.PI / -2;
     quarterCylinder3.rotation.y = Math.PI / 1;
 
+    const quarterCylinder4 = new THREE.Mesh(quarterCylinderGeometry, cubeMaterial);
+
+     // Posicionamento inicial 
+     quarterCylinder4.position.set(-0.6, 0.353, -0.6); // Centralizado no grupo, ajuste para a junção desejada
+     quarterCylinder4.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
+     quarterCylinder4.rotation.z = Math.PI / 2;
+     quarterCylinder4.rotation.y = Math.PI / 1;
+     quarterCylinder4.rotation.x = Math.PI / -2;
+ 
+     const quarterCylinder5 = new THREE.Mesh(quarterCylinder1Geometry, cube1Material);
+     
+     // Posicionamento inicial 
+     quarterCylinder5.position.set(-0.6, 0.353, -0.6); // Centralizado no grupo, ajuste para a junção desejada
+     quarterCylinder5.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
+     quarterCylinder5.rotation.z = Math.PI / 2;
+     quarterCylinder5.rotation.y = Math.PI / 1;
+     quarterCylinder5.rotation.x = Math.PI / -2;
+
+     const quarterCylinder6 = new THREE.Mesh(quarterCylinderGeometry, cubeMaterial);
+
+     // Posicionamento inicial 
+     quarterCylinder6.position.set(0.6, 0.353, -0.6); // Centralizado no grupo, ajuste para a junção desejada
+     quarterCylinder6.rotation.x = Math.PI / 2; // Rotacionado para alinhar no plano correto
+     quarterCylinder6.rotation.z = Math.PI / 2;
+     quarterCylinder6.rotation.y = Math.PI / 1;
+     quarterCylinder6.rotation.x = Math.PI / -2;
+ 
+     const quarterCylinder7 = new THREE.Mesh(quarterCylinder1Geometry, cube1Material);
+     
+     // Posicionamento inicial 
+     quarterCylinder7.position.set(0.6, 0.353, -0.6); 
+     quarterCylinder7.rotation.x = Math.PI / 2; 
+     quarterCylinder7.rotation.z = Math.PI / 2;
+     quarterCylinder7.rotation.y = Math.PI / 1;
+     quarterCylinder7.rotation.x = Math.PI / -2;
+ 
+     const cube4Geometry = new THREE.BoxGeometry(1.47,1, 0.11);     
+     const cube4 = new THREE.Mesh(cube4Geometry, cubeMaterial);
+     cube4.position.set(0.6, 1.07, -0.803);
+     cube4.rotation.y = Math.PI / 2;
+     cube4.rotation.z = Math.PI / 2;
+     const cube5Geometry = new THREE.BoxGeometry(1.48, 1.01, 0.1);     
+     const cube5 = new THREE.Mesh(cube5Geometry, cube1Material);
+     cube5.position.set(0.6, 1.07, -0.803);
+     cube5.rotation.y = Math.PI / 2;
+     cube5.rotation.z = Math.PI / 2;         
+     const cube6 = new THREE.Mesh(cube4Geometry, cubeMaterial);
+     cube6.position.set(-0.6, 1.07, -0.803);
+     cube6.rotation.y = Math.PI / 2;
+     cube6.rotation.z = Math.PI / 2;      
+     const cube7 = new THREE.Mesh(cube5Geometry, cube1Material);
+     cube7.position.set(-0.6, 1.07, -0.803);
+     cube7.rotation.y = Math.PI / 2;
+     cube7.rotation.z = Math.PI / 2;
+
+     //Laterais altas
+   
+    const cube8Geometry = new THREE.BoxGeometry(4.3, 0.2, 0.11);
+   
+    const cube8 = new THREE.Mesh(cube8Geometry, cubeMaterial);
+    cube8.position.set(0.6, 1.5, 0.5);
+    cube8.rotation.y = Math.PI / 2;
+    cube8.rotation.z = Math.PI / 2;
+    const cube10 = new THREE.Mesh(cube8Geometry, cubeMaterial);
+    cube10.position.set(-0.6, 1.5, 0.5);
+    cube10.rotation.y = Math.PI / 2;
+    cube10.rotation.z = Math.PI / 2;
+
+    const cube9Geometry = new THREE.BoxGeometry(4.31, 0.21, 0.1);   
+    const cube9 = new THREE.Mesh(cube9Geometry, cube1Material);
+    cube9.position.set(0.6, 1.5, 0.5);
+    cube9.rotation.y = Math.PI / 2;
+    cube9.rotation.z = Math.PI / 2;
+    const cube11 = new THREE.Mesh(cube9Geometry, cube1Material);
+    cube11.position.set(-0.6, 1.5, 0.5);
+    cube11.rotation.y = Math.PI / 2;
+    cube11.rotation.z = Math.PI / 2;
+
+    //Acabamento do arredondamento da base lateral
+    const cube12Geometry = new THREE.BoxGeometry(0.7, 0.01, 0.11);   
+    const cube12 = new THREE.Mesh(cube12Geometry, cubeMaterial);
+    cube12.position.set(0.6, 2.15, -0.6);
+    cube12.rotation.y = Math.PI / 2;
+    cube12.rotation.z = Math.PI / 2;
+    const cube14 = new THREE.Mesh(cube12Geometry, cubeMaterial);
+    cube14.position.set(-0.6, 2.15, -0.6);
+    cube14.rotation.y = Math.PI / 2;
+    cube14.rotation.z = Math.PI / 2;
+
+    const cube13Geometry = new THREE.BoxGeometry(0.71, 0.02, 0.1);   
+    const cube13 = new THREE.Mesh(cube13Geometry, cube1Material);
+    cube13.position.set(0.6, 2.155, -0.6);
+    cube13.rotation.y = Math.PI / 2;
+    cube13.rotation.z = Math.PI / 2;
+    const cube15 = new THREE.Mesh(cube13Geometry, cube1Material);
+    cube15.position.set(-0.6, 2.155, -0.6);
+    cube15.rotation.y = Math.PI / 2;
+    cube15.rotation.z = Math.PI / 2;
+
+//Aciona partes da frente do suporte lateral
+      
+        const cube16Geometry = new THREE.BoxGeometry(0.9, 0.6, 0.11);   
+        const cube16 = new THREE.Mesh(cube16Geometry, cubeMaterial);
+        cube16.position.set(0.6, -0.2, 0.85);
+        cube16.rotation.y = Math.PI / 2;
+        cube16.rotation.z = Math.PI / 2;
+        const cube18 = new THREE.Mesh(cube16Geometry, cubeMaterial);
+        cube18.position.set(-0.6, -0.2, 0.85);
+        cube18.rotation.y = Math.PI / 2;
+        cube18.rotation.z = Math.PI / 2;
+        const cube17Geometry = new THREE.BoxGeometry(0.91, 0.61, 0.1);   
+        const cube17 = new THREE.Mesh(cube17Geometry, cube1Material);
+        cube17.position.set(0.6, -0.2, 0.85);
+        cube17.rotation.y = Math.PI / 2;
+        cube17.rotation.z = Math.PI / 2;
+        const cube19 = new THREE.Mesh(cube17Geometry, cube1Material);
+        cube19.position.set(-0.6, -0.2, 0.85);
+        cube19.rotation.y = Math.PI / 2;
+        cube19.rotation.z = Math.PI / 2;
+
     // --- Adiciona todos os componentes ao grupo ---
     group.add(motor, motor1, motor2, motor3, motor4, motor5, gearbox, leftShaft, rightShaft, 
-              terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3);
+              terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3, quarterCylinder4, quarterCylinder5,quarterCylinder6, quarterCylinder7, cube4, cube5, cube6, cube7, cube8, cube9, cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19);
 
     // Ajuste final da posição do grupo no espaço
     group.position.y = -0.7;
