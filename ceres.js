@@ -988,18 +988,74 @@ cylinder103.rotation.z = Math.PI / 2;
     const ring1 = new THREE.Mesh(ring1GeometryAlt, cap2Material);
     ring1.position.set(0, 0.22, 5.2); // Posicionada no topo da meia esfera
     ring1.rotation.x = Math.PI / 2; // Rotacionar para ficar como um cilindro deitado
-    const cylinder104Geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32);
+    const cylinder104Geometry = new THREE.CylinderGeometry(0.15, 0.15, 0.2, 32);
 const cylinder104 = new THREE.Mesh(cylinder104Geometry, cylinderBlack);
-    cylinder104.position.set(0, 0, 5.2);
+    cylinder104.position.set(0, -0.01, 5.2);
     cylinder104.rotation.x = Math.PI / 2;
     cylinder104.rotation.z = Math.PI / 2;
     cylinder104.rotation.y = Math.PI / 2;
 
 
+    //Botão
+    const cubeB1Geometry = new THREE.BoxGeometry(0.9, 0.8, 0.48);  
+    
+   const cubeB1 = new THREE.Mesh(cubeB1Geometry, motor2Material);
+   cubeB1.position.set(0, 3.1, 1);
+   
+   cubeB1.rotation.z = Math.PI / 1;
+   cubeB1.rotation.x = Math.PI / 2;
+   const cubeB2Geometry = new THREE.BoxGeometry(1.1, 0.1, 0.58);     
+  const cubeB2 = new THREE.Mesh(cubeB2Geometry, motor2Material);
+  cubeB2.position.set(0, 3.1, 1.4);
+  
+  cubeB2.rotation.z = Math.PI / 1;
+  cubeB2.rotation.x = Math.PI / 2;
+  const cubeB3Geometry = new THREE.BoxGeometry(0.5, 0.11, 0.48);     
+  const cubeB3 = new THREE.Mesh(cubeB3Geometry, motor2Material);
+  cubeB3.position.set(-0.1, 3.1, 1.45);
+  
+  cubeB3.rotation.z = 25;
+  cubeB3.rotation.x = Math.PI / 2;
+  const cubeB4Geometry = new THREE.BoxGeometry(0.5, 0.1, 0.48);     
+  const cubeB4 = new THREE.Mesh(cubeB4Geometry, motor2Material);
+  cubeB4.position.set(0.1, 3.1, 1.45);
+  
+  cubeB4.rotation.z = Math.PI / 1;
+  cubeB4.rotation.x = Math.PI / 2;
+  const cubeB5Geometry = new THREE.BoxGeometry(0.9, 0.1, 3);     
+  const cubeB5 = new THREE.Mesh(cubeB5Geometry, motor2Material);
+  cubeB5.position.set(0, 1.2, 0.9);
+  
+  cubeB5.rotation.z = Math.PI / 1;
+  cubeB5.rotation.x = Math.PI / 2;
+  const cubeB6Geometry = new THREE.BoxGeometry(0.9, 0.7, 0.1);     
+  const cubeB6 = new THREE.Mesh(cubeB6Geometry, motor2Material);
+  cubeB6.position.set(0, 2.7, 1.2);
+  
+  cubeB6.rotation.z = Math.PI / 1;
+  cubeB6.rotation.x = Math.PI / 2;
+  const cubeB7 = new THREE.Mesh(cubeB6Geometry, motor2Material);
+  cubeB7.position.set(0, -0.25, 1.2);
+  
+  cubeB7.rotation.z = Math.PI / 1;
+  cubeB7.rotation.x = Math.PI / 2;
+  const cubeB8Geometry = new THREE.BoxGeometry(0.1, 0.5, 3);     
+  const cubeB8 = new THREE.Mesh(cubeB8Geometry, motor2Material);
+  cubeB8.position.set(0.4, 1.2, 1.2);
+  
+  cubeB8.rotation.z = Math.PI / 1;
+  cubeB8.rotation.x = Math.PI / 2;
+  const cubeB9 = new THREE.Mesh(cubeB8Geometry, motor2Material);
+  cubeB9.position.set(-0.4, 1.2, 1.2);
+  
+  cubeB9.rotation.z = Math.PI / 1;
+  cubeB9.rotation.x = Math.PI / 2;
+
+
     // --- Adiciona todos os componentes ao grupo ---
     group.add(motor, motor1, motor2, motor3, motor4, motor5, gearbox, leftShaft, rightShaft, 
               terminal1, terminal2, cube, cube1, cube2, cube3, quarterCylinder, quarterCylinder1,quarterCylinder2, quarterCylinder3, quarterCylinder4, quarterCylinder5,quarterCylinder6, quarterCylinder7, cube4, cube5, cube6, cube7, cube8, cube9, cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25, cube26, cube27, cube28, cube29, cube30, cube31, cube32, cube33, cube34, cube35, cube36, cube37, cube38,cube39, cylinder, cylinder1, cylinder2, cylinder3, cylinder4, cylinder5,cylinder6, cube40, cube41, cube42, cube43, cube44, cube45, cube46, cube47, cube48,cube49, cube50,cube51, cube52, cube53, cylinder8, cylinder9, cylinder10, cylinder11, cylinder12, cylinder13, cylinder14, cylinder15, cylinder16, cylinder17, cylinder18, cylinder19, cylinder20, cylinder21, cylinder22,cylinder23, cylinder24, cylinder25, cylinder26, cylinder27,cylinder28, cylinder29, cylinder30, cylinder31, cylinder32,cylinder33, cylinder34, cylinder35, cylinder36, cylinder37, cylinder38, cylinder39, cylinder40, cylinder41, cylinder42, cube54, cube55, cube56, cube57, cube58, cube59, cube60,cube61, cylinder62, cylinder63, cube62,cube63, cylinder64, cylinder65, cylinder66, cylinder67, cylinder68,cylinder69, cylinder70, cylinder71,cylinder72, cylinder73,cylinder74,cylinder75, cylinder76,cylinder77,cylinder78,cylinder79,cylinder81,cylinder82, cylinder83, cylinder84, cylinder85, cylinder86, cylinder87,cylinder88, cylinder89, cylinder90, cylinder91,cylinder92,cylinder93,cylinder94,cylinder95,cylinder96,cylinder97, cylinder98, cylinder99,cylinder100, cylinder101, cylinder102, cylinder103,
-              bottleTop, cap, cap1, ring, ring1,cylinder104); // Adiciona a garrafa PET ao grupo
+              bottleTop, cap, cap1, ring, ring1,cylinder104, cubeB1, cubeB2, cubeB3, cubeB4, cubeB5, cubeB6, cubeB7,  cubeB8, cubeB9 ); // Adiciona a garrafa PET ao grupo
 
     // Ajuste final da posição do grupo no espaço
     group.position.y = -0.2;
